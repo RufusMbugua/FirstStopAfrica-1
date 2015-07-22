@@ -39,6 +39,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
       },
       'phone@home': {
         templateUrl: 'app/partials/home/phone.html',
+      },
+      'images@home': {
+        templateUrl: 'app/partials/home/images.html',
       }
     }
   });

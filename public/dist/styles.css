@@ -914,7 +914,7 @@ figure {
 img {
   vertical-align: middle; }
 
-.img-responsive, #logo {
+.img-responsive, #logo, img.small, img.large {
   display: block;
   max-width: 100%;
   height: auto; }
@@ -1353,7 +1353,7 @@ pre {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-sm-1, .col-md-1, #logo, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, #secondary_content #email, #secondary_content #phone, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, #carousel-bar, #carousel, .col-lg-12 {
+.col-xs-1, .col-sm-1, .col-md-1, #logo, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, img.small, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, #secondary_content .bar-main #email, #secondary_content .bar-main #phone, img.large, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, #carousel-bar, #carousel, .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -1672,7 +1672,7 @@ pre {
   .col-sm-offset-12 {
     margin-left: 100%; } }
 @media (min-width: 992px) {
-  .col-md-1, #logo, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, #secondary_content #email, #secondary_content #phone, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, #carousel-bar, #carousel {
+  .col-md-1, #logo, .col-md-2, .col-md-3, img.small, .col-md-4, .col-md-5, .col-md-6, #secondary_content .bar-main #email, #secondary_content .bar-main #phone, img.large, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, #carousel-bar, #carousel {
     float: left; }
 
   .col-md-1, #logo {
@@ -1681,7 +1681,7 @@ pre {
   .col-md-2 {
     width: 16.66667%; }
 
-  .col-md-3 {
+  .col-md-3, img.small {
     width: 25%; }
 
   .col-md-4 {
@@ -1690,7 +1690,7 @@ pre {
   .col-md-5 {
     width: 41.66667%; }
 
-  .col-md-6, #secondary_content #email, #secondary_content #phone {
+  .col-md-6, #secondary_content .bar-main #email, #secondary_content .bar-main #phone, img.large {
     width: 50%; }
 
   .col-md-7 {
@@ -5693,21 +5693,33 @@ p + .typl8-drop-cap {
   height: 100%; }
 
 #secondary_content {
+  position: relative;
   overflow-y: hidden;
-  height: 30%;
-  border-top: 3px solid #f7f136;
-  background: black;
-  padding: 5% 15%; }
-  #secondary_content #email {
-    width: 50%;
-    margin: auto; }
-    #secondary_content #email input {
-      background: #fcf9e4; }
-    #secondary_content #email .btn-blue {
-      background: #26a5cf;
-      color: white; }
-      #secondary_content #email .btn-blue i {
-        padding-right: 5px; }
+  height: 30%; }
+  #secondary_content .bar {
+    border-top: 3px solid #f7f136;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.7; }
+  #secondary_content .bar-main {
+    top: 0;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    padding: 5% 15%; }
+    #secondary_content .bar-main #email {
+      width: 50%;
+      margin: auto; }
+      #secondary_content .bar-main #email input {
+        border-color: #ddd;
+        background: #fcf9e4; }
+      #secondary_content .bar-main #email .btn-blue {
+        background: #26a5cf;
+        color: white; }
+        #secondary_content .bar-main #email .btn-blue i {
+          padding-right: 5px; }
 
 #logo {
   height: 150px;
@@ -5718,22 +5730,24 @@ p + .typl8-drop-cap {
 
 #carousel-bar {
   /* z-index:-1; */
-  height: 20%;
+  height: 25%;
   position: absolute;
   background: black;
   opacity: 0.7;
   bottom: 0; }
 
 #carousel {
+  padding-top: 5%;
   color: white !important;
-  height: 20%;
+  height: 25%;
   position: absolute;
   bottom: 0; }
   #carousel h3 {
     color: white !important; }
 
 .carousel-control {
-  background: transparent !important; }
+  background: transparent !important;
+  color: #f7f136 !important; }
 
 .carousel-indicators {
   opacity: 0.7;
@@ -5746,7 +5760,23 @@ p + .typl8-drop-cap {
     background: #f7f136 !important; }
 
 .centered {
+  color: white;
   width: 100%;
   text-align: center; }
+
+img.small {
+  height: 100%;
+  padding: 0; }
+
+img.large {
+  height: 100%;
+  padding: 0; }
+
+#image-set {
+  z-index: -10;
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%; }
 
 /*# sourceMappingURL=styles.css.map */

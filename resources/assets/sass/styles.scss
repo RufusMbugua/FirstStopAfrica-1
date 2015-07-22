@@ -22,29 +22,46 @@ $light-yellow:#fcf9e4;
   height:100%;
 }
 #secondary_content{
+  position: relative;
   overflow-y:hidden;
   height:30%;
-  border-top:3px solid $yellow;
-  background:black;
-  padding:5% 15%;
-  #email{
-    @extend .col-md-6;
-    width:50%;
-    margin:auto;
-    input{
-      background:$light-yellow;
-    }
-    .btn-blue{
-      i{
-        padding-right: 5px;
+  .bar{
+    border-top:3px solid $yellow;
+    width:100%;
+    height:100%;
+    background:black;
+    opacity:0.7;
+  }
+  .bar-main{
+    top:0;
+    position:absolute;
+    z-index:1000;
+    width:100%;
+    height:100%;
+    padding:5% 15%;
+    #email{
+      @extend .col-md-6;
+      width:50%;
+      margin:auto;
+      input{
+        border-color:#ddd;
+        background:$light-yellow;
       }
-      background: #26a5cf;
-      color:white;
+      .btn-blue{
+        i{
+          padding-right: 5px;
+        }
+        background: #26a5cf;
+        color:white;
+      }
+    }
+    #phone{
+      @extend .col-md-6;
     }
   }
-  #phone{
-    @extend .col-md-6;
-  }
+}
+#secondary-content-form{
+
 }
 #logo{
   @extend .img-responsive;
@@ -57,7 +74,7 @@ $light-yellow:#fcf9e4;
 }
 #carousel-bar{
   /* z-index:-1; */
-  height:20%;
+  height:25%;
   @extend .col-md-12;
   position:absolute;
   background:black;
@@ -65,34 +82,58 @@ $light-yellow:#fcf9e4;
   bottom:0;
 }
 #carousel{
+  padding-top:5%;
   color:white !important;
   h3{
     color:white !important;
   }
 
-  height:20%;
+  height:25%;
   @extend .col-md-12;
   position:absolute;
   bottom:0;
 }
 .carousel-control{
   background:transparent !important;
+  color:$yellow !important;
 }
 .carousel-indicators{
   opacity:0.7;
   position:absolute;
   bottom:0;
   margin-bottom:-2em;
+
   li{
     border-color: $yellow !important;
   }
   li.active{
     background: $yellow !important;
   }
-
 }
 
 .centered{
+  color:white;
   width:100%;
   text-align: center;
+}
+
+img.small{
+  @extend .col-md-3;
+  @extend .img-responsive;
+  height:100%;
+  padding:0;
+}
+
+img.large{
+  @extend .col-md-6;
+  @extend .img-responsive;
+  height:100%;
+  padding:0;
+}
+#image-set{
+  z-index:-10;
+  position:absolute;
+  bottom:0;
+  height:100%;
+  width:100%;
 }

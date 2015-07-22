@@ -1,4 +1,4 @@
-angular.module('templates-dist', ['../public/app/partials/directives/footer.html', '../public/app/partials/directives/head.html', '../public/app/partials/home/about.html', '../public/app/partials/home/carousel.html', '../public/app/partials/home/email.html', '../public/app/partials/home/header.html', '../public/app/partials/home/index.html', '../public/app/partials/home/phone.html']);
+angular.module('templates-dist', ['../public/app/partials/directives/footer.html', '../public/app/partials/directives/head.html', '../public/app/partials/home/about.html', '../public/app/partials/home/carousel.html', '../public/app/partials/home/email.html', '../public/app/partials/home/header.html', '../public/app/partials/home/images.html', '../public/app/partials/home/index.html', '../public/app/partials/home/phone.html']);
 
 angular.module("../public/app/partials/directives/footer.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/directives/footer.html",
@@ -60,6 +60,14 @@ angular.module("../public/app/partials/home/header.html", []).run(["$templateCac
     "");
 }]);
 
+angular.module("../public/app/partials/home/images.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/home/images.html",
+    "<img class=\"small\" src=\"images/FirstStop_Grid_1.png\" alt=\"\">\n" +
+    "<img class=\"large\" src=\"images/FirstStop_Grid_2.png\" alt=\"\">\n" +
+    "<img class=\"small\" src=\"images/FirstStop_Grid_3.png\" alt=\"\">\n" +
+    "");
+}]);
+
 angular.module("../public/app/partials/home/index.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/home/index.html",
     "<div id=\"main_content\">\n" +
@@ -68,8 +76,13 @@ angular.module("../public/app/partials/home/index.html", []).run(["$templateCach
     "  <div ui-view=\"carousel\" id=\"carousel\"></div>\n" +
     "</div>\n" +
     "<div id=\"secondary_content\">\n" +
-    "  <div id=\"phone\" ui-view=\"phone\"></div>\n" +
-    "  <div ui-view=\"email\" id=\"email\"></div>\n" +
+    "  <div class=\"bar\"></div>\n" +
+    "\n" +
+    "  <div id=\"image-set\" ui-view=\"images\"></div>\n" +
+    "  <div class=\"bar-main\">\n" +
+    "      <div id=\"phone\" ui-view=\"phone\"></div>\n" +
+    "      <div ui-view=\"email\" id=\"email\"></div>\n" +
+    "  </div>\n" +
     "</div>\n" +
     "");
 }]);
