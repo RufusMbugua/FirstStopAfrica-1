@@ -5687,7 +5687,7 @@ p + .typl8-drop-cap {
  *
  */
 #main_content {
-  background-size: auto;
+  background-size: cover;
   position: relative;
   background-image: url("../images/FirstStop_Main.png");
   height: 100%; }
